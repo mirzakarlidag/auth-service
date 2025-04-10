@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  auth:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=django-insecure-_$vm#y=_om--2shl$+4z0&t3rl_sub9y4u4t*-*(%uw8flqzm^
+      - ALLOWED_HOSTS=localhost,127.0.0.1
+    command: >
+      bash -c "python manage.py migrate &&
+               python manage.py runserver 0.0.0.0:8000"

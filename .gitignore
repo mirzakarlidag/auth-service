@@ -1,2 +1,9 @@
 # VsCode Workspace
 auth-service.code-workspace
+
+# pycache files and folder
+*__pycache__
+*.pyc
+
+# environment variables
+*.env
